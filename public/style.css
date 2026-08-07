@@ -2,218 +2,594 @@
   --pink-1: #f8bfdc;
   --pink-2: #e88bc8;
   --pink-3: #c856a3;
+
   --card: rgba(15, 12, 18, 0.95);
+
   --text: #ffffff;
   --muted: #d9ced6;
+
   --green: #35e854;
   --green-dark: #20bf3c;
+
   --hot: #ff2b78;
-  --border: rgba(255,255,255,0.10);
+
+  --border: rgba(255, 255, 255, 0.10);
 }
+
+
+/* ===============================
+   GLOBAL
+================================ */
 
 * {
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   min-height: 100%;
   margin: 0;
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
 }
 
 body {
   color: var(--text);
 }
 
-button, input {
+button,
+input {
   font: inherit;
 }
 
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+/* ===============================
+   ROMANTIC PAGE
+================================ */
+
 .romantic-page {
   min-height: 100svh;
+
   overflow: hidden;
+
   display: grid;
   place-items: center;
+
   padding: 24px;
+
   background:
-    radial-gradient(circle at 20% 20%, rgba(255,255,255,.35), transparent 28%),
-    linear-gradient(135deg, var(--pink-1), var(--pink-2) 52%, var(--pink-3));
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(255, 255, 255, 0.35),
+      transparent 28%
+    ),
+    linear-gradient(
+      135deg,
+      var(--pink-1),
+      var(--pink-2) 52%,
+      var(--pink-3)
+    );
+
   position: relative;
 }
 
+
+/* ===============================
+   BACKGROUND GLOW
+================================ */
+
 .bg-glow {
   position: fixed;
+
   width: 260px;
   height: 260px;
+
   border-radius: 999px;
+
   filter: blur(70px);
-  opacity: .42;
+
+  opacity: 0.42;
+
   pointer-events: none;
 }
 
 .glow-one {
   background: #ffffff;
+
   top: -70px;
   left: -80px;
 }
 
 .glow-two {
   background: #ff4bb6;
+
   right: -80px;
   bottom: -80px;
 }
 
+
+/* ===============================
+   MAIN CARD
+================================ */
+
 .love-card {
   width: min(92vw, 560px);
+
   min-height: 330px;
+
   padding: 42px 34px 34px;
+
   border: 1px solid var(--border);
+
   border-radius: 28px;
+
   background: var(--card);
+
   backdrop-filter: blur(18px);
-  box-shadow: 0 28px 80px rgba(77, 9, 48, .28);
+
+  box-shadow:
+    0 28px 80px
+    rgba(77, 9, 48, 0.28);
+
   position: relative;
+
   text-align: center;
+
   z-index: 2;
 }
 
 .love-card h1 {
-  margin: 0 0 16px;
-  font-size: clamp(30px, 6vw, 46px);
+  margin:
+    0
+    0
+    16px;
+
+  font-size:
+    clamp(
+      30px,
+      6vw,
+      46px
+    );
+
   line-height: 1.05;
+
   color: #ff3d87;
 }
 
 .love-card p {
-  margin: 0 auto;
+  margin:
+    0
+    auto;
+
   max-width: 440px;
+
   color: var(--muted);
+
   line-height: 1.6;
+
   font-size: 16px;
 }
 
+
+/* ===============================
+   HEART
+================================ */
+
 .tiny-heart {
   position: absolute;
+
   top: 17px;
   right: 20px;
+
   color: #ff4b91;
+
   font-size: 22px;
-  opacity: .9;
+
+  opacity: 0.9;
 }
+
+
+/* ===============================
+   BUTTON ZONE
+================================ */
 
 .button-zone {
   min-height: 118px;
+
   margin-top: 34px;
+
   position: relative;
 }
 
-.yes-btn, .no-btn, .small-btn {
+
+/* ===============================
+   COMMON BUTTONS
+================================ */
+
+.yes-btn,
+.no-btn,
+.small-btn {
   border: 0;
+
   border-radius: 999px;
+
   font-weight: 800;
+
   cursor: pointer;
-  transition: transform .18s ease, filter .18s ease, box-shadow .18s ease;
+
+  user-select: none;
+
+  outline: none;
 }
+
+
+/* ===============================
+   YES BUTTON
+================================ */
 
 .yes-btn {
   min-width: 150px;
-  padding: 15px 26px;
+
+  padding:
+    15px
+    26px;
+
   color: #08210e;
-  background: linear-gradient(180deg, #54ff70, var(--green));
-  box-shadow: 0 0 25px rgba(53,232,84,.42);
+
+  background:
+    linear-gradient(
+      180deg,
+      #54ff70,
+      var(--green)
+    );
+
+  box-shadow:
+    0 0 25px
+    rgba(53, 232, 84, 0.42);
+
+  transform-origin: center;
+
+  transition:
+    transform 0.25s ease,
+    filter 0.25s ease,
+    box-shadow 0.25s ease;
+
+  position: relative;
+
+  z-index: 5;
 }
 
 .yes-btn:hover {
-  transform: translateY(-2px) scale(1.03);
-  filter: brightness(1.05);
+  filter: brightness(1.08);
+
+  box-shadow:
+    0 0 34px
+    rgba(53, 232, 84, 0.55);
 }
+
+.yes-btn:active {
+  filter: brightness(0.95);
+}
+
+
+/* ===============================
+   NO BUTTON
+================================ */
 
 .no-btn {
   position: fixed;
+
   min-width: 110px;
-  padding: 13px 22px;
-  color: #fff;
-  background: linear-gradient(180deg, #ff558f, var(--hot));
-  box-shadow: 0 0 22px rgba(255,43,120,.35);
+
+  padding:
+    13px
+    22px;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      180deg,
+      #ff558f,
+      var(--hot)
+    );
+
+  box-shadow:
+    0 0 22px
+    rgba(255, 43, 120, 0.35);
+
   z-index: 9999;
+
   left: 50%;
   top: 50%;
+
   visibility: hidden;
+
+  opacity: 1;
+
+  transform-origin: center;
+
+  transition:
+    left 0.25s ease,
+    top 0.25s ease,
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    filter 0.22s ease;
+
+  will-change:
+    left,
+    top,
+    transform;
+
+  touch-action: manipulation;
 }
+
+.no-btn:hover {
+  filter: brightness(1.08);
+
+  box-shadow:
+    0 0 30px
+    rgba(255, 43, 120, 0.48);
+}
+
+.no-btn:active {
+  filter: brightness(0.95);
+}
+
+
+/* ===============================
+   HIDDEN
+================================ */
 
 .hidden {
   display: none !important;
 }
 
+
+/* ===============================
+   UPLOAD CARD
+================================ */
+
 .upload-card form {
   margin-top: 28px;
 }
 
+
+/* ===============================
+   FILE PICKER
+================================ */
+
 .file-picker {
   display: block;
+
   width: 100%;
+
   padding: 18px;
-  border: 1px dashed rgba(255,255,255,.22);
+
+  border:
+    1px
+    dashed
+    rgba(255, 255, 255, 0.22);
+
   border-radius: 18px;
-  color: #fff;
-  background: rgba(255,255,255,.06);
+
+  color: #ffffff;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.06
+    );
+
   cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.file-picker:hover {
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.10
+    );
+
+  border-color:
+    rgba(
+      255,
+      255,
+      255,
+      0.35
+    );
+}
+
+.file-picker:active {
+  transform: scale(0.99);
 }
 
 .file-picker input {
   display: none;
 }
 
+
+/* ===============================
+   PREVIEW
+================================ */
+
 .preview-wrap {
   margin-top: 18px;
+
   max-height: 330px;
+
   overflow: hidden;
+
   border-radius: 18px;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.08
+    );
 }
 
 .preview-wrap img {
   display: block;
+
   width: 100%;
+
   max-height: 330px;
+
   object-fit: contain;
+
   background: #070708;
 }
 
+
+/* ===============================
+   SEND BUTTON
+================================ */
+
 .send-btn {
   margin-top: 18px;
+
   width: 100%;
 }
 
+.send-btn:disabled {
+  opacity: 0.65;
+
+  cursor: wait;
+
+  filter: grayscale(0.25);
+}
+
+
+/* ===============================
+   STATUS
+================================ */
+
 .status {
   margin-top: 14px !important;
+
   min-height: 24px;
-  color: #ffd7e6 !important;
+
+  color:
+    #ffd7e6 !important;
+
+  font-size: 14px;
 }
+
+
+/* ===============================
+   SUCCESS
+================================ */
 
 .big-heart {
   font-size: 70px;
+
   margin-bottom: 16px;
+
+  animation:
+    heartPop
+    0.5s
+    ease;
+}
+
+@keyframes heartPop {
+  0% {
+    transform: scale(0.5);
+
+    opacity: 0;
+  }
+
+  70% {
+    transform: scale(1.15);
+  }
+
+  100% {
+    transform: scale(1);
+
+    opacity: 1;
+  }
 }
 
 .success-card {
   min-height: 280px;
 }
 
+
+/* ===============================
+   ADMIN PAGE
+================================ */
+
 .admin-page {
   min-height: 100vh;
+
   margin: 0;
+
   padding: 28px;
+
   background: #0b0b0f;
-  color: #fff;
+
+  color: #ffffff;
 }
+
+
+/* ===============================
+   ADMIN LOGIN
+================================ */
 
 .admin-login-card {
   max-width: 420px;
-  margin: 12vh auto 0;
+
+  margin:
+    12vh
+    auto
+    0;
+
   background: #15151c;
-  border: 1px solid rgba(255,255,255,.08);
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.08
+    );
+
   border-radius: 22px;
+
   padding: 28px;
+
+  box-shadow:
+    0 20px 70px
+    rgba(
+      0,
+      0,
+      0,
+      0.35
+    );
 }
 
 .admin-login-card h1 {
@@ -222,29 +598,81 @@ button, input {
 
 .admin-login-card form {
   display: grid;
+
   gap: 14px;
 }
 
 .admin-login-card input {
   width: 100%;
-  padding: 14px 16px;
-  border: 1px solid rgba(255,255,255,.12);
+
+  padding:
+    14px
+    16px;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.12
+    );
+
   border-radius: 12px;
+
   background: #0e0e13;
-  color: #fff;
+
+  color: #ffffff;
+
   outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.admin-login-card input:focus {
+  border-color:
+    rgba(
+      255,
+      75,
+      145,
+      0.65
+    );
+
+  box-shadow:
+    0 0 0 3px
+    rgba(
+      255,
+      75,
+      145,
+      0.12
+    );
 }
 
 .admin-login-card a {
   color: #ff7bb2;
 }
 
+
+/* ===============================
+   ADMIN HEADER
+================================ */
+
 .admin-header {
   max-width: 1180px;
-  margin: 0 auto 24px;
+
+  margin:
+    0
+    auto
+    24px;
+
   display: flex;
+
   justify-content: space-between;
+
   align-items: center;
+
   gap: 18px;
 }
 
@@ -253,42 +681,114 @@ button, input {
 }
 
 .admin-header p {
-  color: #aaa;
-  margin: 6px 0 0;
+  color: #aaaaaa;
+
+  margin:
+    6px
+    0
+    0;
 }
+
+
+/* ===============================
+   ADMIN GALLERY
+================================ */
 
 .gallery {
   max-width: 1180px;
-  margin: 0 auto;
+
+  margin:
+    0
+    auto;
+
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+
+  grid-template-columns:
+    repeat(
+      auto-fill,
+      minmax(
+        230px,
+        1fr
+      )
+    );
+
   gap: 18px;
 }
 
+
+/* ===============================
+   PHOTO CARD
+================================ */
+
 .photo-card {
   overflow: hidden;
+
   border-radius: 18px;
+
   background: #15151c;
-  border: 1px solid rgba(255,255,255,.08);
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.08
+    );
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.photo-card:hover {
+  transform:
+    translateY(-2px);
+
+  border-color:
+    rgba(
+      255,
+      255,
+      255,
+      0.16
+    );
 }
 
 .photo-card img {
   display: block;
+
   width: 100%;
+
   height: 260px;
+
   object-fit: cover;
+
   background: #09090c;
 }
 
+
+/* ===============================
+   PHOTO META
+================================ */
+
 .photo-meta {
   padding: 14px;
+
   color: #cfcfd5;
+
   font-size: 13px;
 }
 
+
+/* ===============================
+   ADMIN ACTIONS
+================================ */
+
 .admin-actions {
   margin-top: 12px;
+
   display: flex;
+
   gap: 10px;
 }
 
@@ -298,29 +798,81 @@ button, input {
 
 .small-btn {
   display: inline-block;
-  padding: 9px 14px;
+
+  padding:
+    9px
+    14px;
+
   text-decoration: none;
-  color: #fff;
+
+  color: #ffffff;
+
   background: #30303b;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.small-btn:hover {
+  background: #3c3c49;
+
+  transform:
+    translateY(-1px);
 }
 
 .small-btn.danger {
   background: #8b203f;
 }
 
-.empty-state {
-  color: #aaa;
+.small-btn.danger:hover {
+  background: #a8274c;
 }
 
+
+/* ===============================
+   EMPTY STATE
+================================ */
+
+.empty-state {
+  color: #aaaaaa;
+}
+
+
+/* ===============================
+   MOBILE
+================================ */
+
 @media (max-width: 600px) {
+
   .romantic-page {
     padding: 16px;
   }
 
   .love-card {
     width: 100%;
-    padding: 38px 20px 28px;
+
+    padding:
+      38px
+      20px
+      28px;
+
     border-radius: 22px;
+
+    min-height: 310px;
+  }
+
+  .love-card h1 {
+    font-size:
+      clamp(
+        28px,
+        9vw,
+        38px
+      );
+  }
+
+  .love-card p {
+    font-size: 15px;
   }
 
   .button-zone {
@@ -329,6 +881,25 @@ button, input {
 
   .yes-btn {
     min-width: 145px;
+
+    padding:
+      14px
+      24px;
+  }
+
+  .no-btn {
+    min-width: 96px;
+
+    padding:
+      11px
+      18px;
+
+    font-size: 14px;
+  }
+
+  .preview-wrap,
+  .preview-wrap img {
+    max-height: 400px;
   }
 
   .admin-page {
@@ -345,7 +916,71 @@ button, input {
 
   .photo-card img {
     height: auto;
+
     max-height: 520px;
+
     object-fit: contain;
+  }
+}
+
+
+/* ===============================
+   VERY SMALL PHONES
+================================ */
+
+@media (max-width: 380px) {
+
+  .romantic-page {
+    padding: 12px;
+  }
+
+  .love-card {
+    padding:
+      34px
+      16px
+      24px;
+  }
+
+  .love-card h1 {
+    font-size: 27px;
+  }
+
+  .yes-btn {
+    min-width: 132px;
+
+    padding:
+      13px
+      20px;
+  }
+
+  .no-btn {
+    min-width: 90px;
+
+    padding:
+      10px
+      15px;
+  }
+}
+
+
+/* ===============================
+   REDUCED MOTION
+================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+
+    transition-duration:
+      0.01ms !important;
+
+    animation-duration:
+      0.01ms !important;
+
+    animation-iteration-count:
+      1 !important;
   }
 }
