@@ -16,11 +16,6 @@
   --border: rgba(255, 255, 255, 0.10);
 }
 
-
-/* ===============================
-   GLOBAL
-================================ */
-
 * {
   box-sizing: border-box;
 }
@@ -40,8 +35,13 @@ body {
     sans-serif;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   color: var(--text);
+  overflow-x: hidden;
 }
 
 button,
@@ -53,7 +53,6 @@ button {
   -webkit-tap-highlight-color: transparent;
 }
 
-
 /* ===============================
    ROMANTIC PAGE
 ================================ */
@@ -61,7 +60,8 @@ button {
 .romantic-page {
   min-height: 100svh;
 
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 
   display: grid;
   place-items: center;
@@ -83,7 +83,6 @@ button {
 
   position: relative;
 }
-
 
 /* ===============================
    BACKGROUND GLOW
@@ -118,7 +117,6 @@ button {
   bottom: -80px;
 }
 
-
 /* ===============================
    MAIN CARD
 ================================ */
@@ -147,13 +145,12 @@ button {
   text-align: center;
 
   z-index: 2;
+
+  margin: 24px auto;
 }
 
 .love-card h1 {
-  margin:
-    0
-    0
-    16px;
+  margin: 0 0 16px;
 
   font-size:
     clamp(
@@ -168,9 +165,7 @@ button {
 }
 
 .love-card p {
-  margin:
-    0
-    auto;
+  margin: 0 auto;
 
   max-width: 440px;
 
@@ -180,7 +175,6 @@ button {
 
   font-size: 16px;
 }
-
 
 /* ===============================
    HEART
@@ -199,7 +193,6 @@ button {
   opacity: 0.9;
 }
 
-
 /* ===============================
    BUTTON ZONE
 ================================ */
@@ -211,7 +204,6 @@ button {
 
   position: relative;
 }
-
 
 /* ===============================
    COMMON BUTTONS
@@ -233,7 +225,6 @@ button {
   outline: none;
 }
 
-
 /* ===============================
    YES BUTTON
 ================================ */
@@ -241,9 +232,7 @@ button {
 .yes-btn {
   min-width: 150px;
 
-  padding:
-    15px
-    26px;
+  padding: 15px 26px;
 
   color: #08210e;
 
@@ -282,7 +271,6 @@ button {
   filter: brightness(0.95);
 }
 
-
 /* ===============================
    NO BUTTON
 ================================ */
@@ -292,9 +280,7 @@ button {
 
   min-width: 110px;
 
-  padding:
-    13px
-    22px;
+  padding: 13px 22px;
 
   color: #ffffff;
 
@@ -347,7 +333,6 @@ button {
   filter: brightness(0.95);
 }
 
-
 /* ===============================
    HIDDEN
 ================================ */
@@ -356,15 +341,17 @@ button {
   display: none !important;
 }
 
-
 /* ===============================
    UPLOAD CARD
 ================================ */
 
+.upload-card {
+  margin: 24px auto 40px;
+}
+
 .upload-card form {
   margin-top: 28px;
 }
-
 
 /* ===============================
    FILE PICKER
@@ -428,7 +415,6 @@ button {
   display: none;
 }
 
-
 /* ===============================
    PREVIEW
 ================================ */
@@ -464,7 +450,6 @@ button {
   background: #070708;
 }
 
-
 /* ===============================
    SEND BUTTON
 ================================ */
@@ -473,6 +458,10 @@ button {
   margin-top: 18px;
 
   width: 100%;
+
+  position: relative;
+
+  z-index: 3;
 }
 
 .send-btn:disabled {
@@ -483,7 +472,6 @@ button {
   filter: grayscale(0.25);
 }
 
-
 /* ===============================
    STATUS
 ================================ */
@@ -493,12 +481,10 @@ button {
 
   min-height: 24px;
 
-  color:
-    #ffd7e6 !important;
+  color: #ffd7e6 !important;
 
   font-size: 14px;
 }
-
 
 /* ===============================
    SUCCESS
@@ -518,7 +504,6 @@ button {
 @keyframes heartPop {
   0% {
     transform: scale(0.5);
-
     opacity: 0;
   }
 
@@ -528,7 +513,6 @@ button {
 
   100% {
     transform: scale(1);
-
     opacity: 1;
   }
 }
@@ -536,7 +520,6 @@ button {
 .success-card {
   min-height: 280px;
 }
-
 
 /* ===============================
    ADMIN PAGE
@@ -554,7 +537,6 @@ button {
   color: #ffffff;
 }
 
-
 /* ===============================
    ADMIN LOGIN
 ================================ */
@@ -562,10 +544,7 @@ button {
 .admin-login-card {
   max-width: 420px;
 
-  margin:
-    12vh
-    auto
-    0;
+  margin: 12vh auto 0;
 
   background: #15151c;
 
@@ -605,9 +584,7 @@ button {
 .admin-login-card input {
   width: 100%;
 
-  padding:
-    14px
-    16px;
+  padding: 14px 16px;
 
   border:
     1px solid
@@ -654,7 +631,6 @@ button {
   color: #ff7bb2;
 }
 
-
 /* ===============================
    ADMIN HEADER
 ================================ */
@@ -662,10 +638,7 @@ button {
 .admin-header {
   max-width: 1180px;
 
-  margin:
-    0
-    auto
-    24px;
+  margin: 0 auto 24px;
 
   display: flex;
 
@@ -683,12 +656,8 @@ button {
 .admin-header p {
   color: #aaaaaa;
 
-  margin:
-    6px
-    0
-    0;
+  margin: 6px 0 0;
 }
-
 
 /* ===============================
    ADMIN GALLERY
@@ -697,9 +666,7 @@ button {
 .gallery {
   max-width: 1180px;
 
-  margin:
-    0
-    auto;
+  margin: 0 auto;
 
   display: grid;
 
@@ -714,7 +681,6 @@ button {
 
   gap: 18px;
 }
-
 
 /* ===============================
    PHOTO CARD
@@ -742,8 +708,7 @@ button {
 }
 
 .photo-card:hover {
-  transform:
-    translateY(-2px);
+  transform: translateY(-2px);
 
   border-color:
     rgba(
@@ -766,7 +731,6 @@ button {
   background: #09090c;
 }
 
-
 /* ===============================
    PHOTO META
 ================================ */
@@ -778,7 +742,6 @@ button {
 
   font-size: 13px;
 }
-
 
 /* ===============================
    ADMIN ACTIONS
@@ -799,9 +762,7 @@ button {
 .small-btn {
   display: inline-block;
 
-  padding:
-    9px
-    14px;
+  padding: 9px 14px;
 
   text-decoration: none;
 
@@ -817,8 +778,7 @@ button {
 .small-btn:hover {
   background: #3c3c49;
 
-  transform:
-    translateY(-1px);
+  transform: translateY(-1px);
 }
 
 .small-btn.danger {
@@ -829,7 +789,6 @@ button {
   background: #a8274c;
 }
 
-
 /* ===============================
    EMPTY STATE
 ================================ */
@@ -838,19 +797,34 @@ button {
   color: #aaaaaa;
 }
 
-
 /* ===============================
    MOBILE
 ================================ */
 
 @media (max-width: 600px) {
 
+  html,
+  body {
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
   .romantic-page {
+    min-height: 100svh;
+
+    display: block;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
     padding: 16px;
   }
 
   .love-card {
     width: 100%;
+
+    margin: 20px auto;
 
     padding:
       38px
@@ -897,9 +871,30 @@ button {
     font-size: 14px;
   }
 
-  .preview-wrap,
+  .upload-card {
+    margin:
+      20px
+      auto
+      60px;
+  }
+
+  .upload-card form {
+    margin-top: 22px;
+  }
+
+  .preview-wrap {
+    max-height: 280px;
+
+    overflow: hidden;
+  }
+
   .preview-wrap img {
-    max-height: 400px;
+    max-height: 280px;
+  }
+
+  .send-btn {
+    margin-top: 16px;
+    margin-bottom: 10px;
   }
 
   .admin-page {
@@ -922,7 +917,6 @@ button {
     object-fit: contain;
   }
 }
-
 
 /* ===============================
    VERY SMALL PHONES
@@ -960,8 +954,16 @@ button {
       10px
       15px;
   }
-}
 
+  .preview-wrap,
+  .preview-wrap img {
+    max-height: 240px;
+  }
+
+  .upload-card {
+    margin-bottom: 70px;
+  }
+}
 
 /* ===============================
    REDUCED MOTION
