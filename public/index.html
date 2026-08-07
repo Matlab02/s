@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#ef9bcc" />
+  <title>Şəklini görmək olar? 🥺</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body class="romantic-page">
+  <div class="bg-glow glow-one"></div>
+  <div class="bg-glow glow-two"></div>
+
+  <main class="love-card" id="questionCard">
+    <div class="tiny-heart">♥</div>
+    <h1>Şəklini görmək olar? 🥺</h1>
+    <p>Sadəcə bir dənə şəkil… söz verirəm, çox baxmayacam 😅</p>
+
+    <div class="button-zone" id="buttonZone">
+      <button class="yes-btn" id="yesBtn" type="button">Olar ❤️</button>
+      <button class="no-btn" id="noBtn" type="button">Yox 😅</button>
+    </div>
+  </main>
+
+  <main class="love-card upload-card hidden" id="uploadCard">
+    <div class="tiny-heart">♥</div>
+    <h1>Onda bir şəkil göndər ❤️</h1>
+    <p>İstədiyin şəkli seç. Şəkil yalnız sən “Göndər” düyməsinə basanda yüklənəcək.</p>
+
+    <form id="uploadForm">
+      <label class="file-picker" for="photo">
+        <span id="fileLabel">Şəkil seç 📷</span>
+        <input id="photo" name="photo" type="file" accept="image/*" required />
+      </label>
+
+      <div id="previewWrap" class="preview-wrap hidden">
+        <img id="preview" alt="Seçilmiş şəkil" />
+      </div>
+
+      <button class="yes-btn send-btn" id="sendBtn" type="submit">Göndər ❤️</button>
+      <p id="status" class="status"></p>
+    </form>
+  </main>
+
+  <main class="love-card success-card hidden" id="successCard">
+    <div class="big-heart">❤️</div>
+    <h1>Şəkil gəldi ❤️</h1>
+    <p>İndi günüm bir az düzəldi 😌</p>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>
